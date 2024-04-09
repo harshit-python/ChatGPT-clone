@@ -5,7 +5,7 @@ from openai import OpenAI
 client = OpenAI(api_key = "")
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://admin:admin@harshcluster.axig8lp.mongodb.net/chatgpt-clone-db"
+app.config["MONGO_URI"] = "mongodb+srv://admin:'<password>'@harshcluster.axig8lp.mongodb.net/chatgpt-clone-db"
 mongo = PyMongo(app)
 
 @app.route('/')
