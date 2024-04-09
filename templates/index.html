@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Main css file for styling-->
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="https://chat.openai.com/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>New chat</title>
+  </head>
+  <body class="bg-chatblack-50">
+    <div class="flex h-[100vh] text-white">
+      <div class="left bg-[#111212]" style="width: 20.83%">
+        <button
+          class="w-[90%] bg-[#191b1c] hover:bg-[#393d40] py-3 m-3 px-10 border-white border rounded-md"
+        >
+          + New Chat
+        </button>
+        <div class="chats flex flex-col justify-center items-center">
+          {% for chat in myChats %}
+
+          <div
+            class="chat bg-[#191b1c] w-[90%] hover:bg-[#393d40] my-1 p-3 rounded-md cursor-pointer flex justify-center items-center"
+          >
+            <span>{{chat.question}}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div
+        class="right1"
+        style="
+          width: 79.17%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding-top: 140px;
+        "
+      >
+        <div class="text-center w-full text-4xl font-bold">ChatGPT</div>
+        <div class="text-lg mb-20 text-center">How can I help you today?</div>
+        <!-- Increased margin-bottom from mb-5 to mb-8 -->
+        <div class="input w-full text-center my-10 mb-10 pl-5 pt-60">
+          <input
+            class="w-[55%] py-4 pl-5 pr-12 bg-gray-600 rounded-md"
+            placeholder="Send a message"
+            type="text"
+            name="text"
+            id="questionInput1"
+          />
+
+          <button id="sendButton1" class="relative -left-10">
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroker-linejoin="round"
+              class="h-4 w-4 mr-1"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="right2"
+        style="
+          display: none; /* Hiding the div */
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          height: fit-content;
+        "
+      >
+        <div
+          class="box1 flex m-auto items-center w-[48vw] py-5 px-4 bg-chatblack-50"
+          id="question1"
+        >
+          this is question
+        </div>
+        <div
+          class="box2 flex justify-center items-center w-full py-5 bg-[#393d40]"
+        >
+          <div class="box w-[48vw] px-4 flex justify-start">
+            <div class="flex flex-col space-y-2">
+              <div id="question2">this is answer</div>
+              <div id="solution">this is answer</div>
+            </div>
+          </div>
+        </div>
+        <div class="input w-full text-center my-14 mb-0 pt-60">
+          <input
+            class="w-[55%] py-4 pl-5 pr-12 bg-gray-600 rounded-md"
+            placeholder="Send a message"
+            type="text"
+            name="text"
+            id="questionInput2"
+          />
+          <button class="relative -left-10" id="sendButton2">
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroker-linejoin="round"
+              class="h-4 w-4 mr-1"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="/static//js/script.js"></script>
+  </body>
+</html>
